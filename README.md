@@ -246,20 +246,20 @@ cat("Estimasi rata-rata (Skala 1-5) =", round(mean_est_likert, 3), "\n")
 ### Hasil Uji Validitas
 | Item | r<sub>hitung</sub> | Keterangan |
 |:----:|-------------------:|:----------:|
-| P1  | 0.5492 | Valid |
-| P2  | 0.6508 | Valid |
-| P3  | 0.3783 | Valid |
-| P4  | 0.5097 | Valid |
-| P5  | 0.3500 | Valid |
-| P6  | 0.6052 | Valid |
-| P7  | 0.5267 | Valid |
-| P8  | 0.5657 | Valid |
-| P9  | 0.7154 | Valid |
-| P10 | 0.5933 | Valid |
+| P1  | 0.5385 | Valid |
+| P2  | 0.6414 | Valid |
+| P3  | 0.3655 | Valid |
+| P4  | 0.4981 | Valid |
+| P5  | 0.3380 | Valid |
+| P6  | 0.5921 | Valid |
+| P7  | 0.5155 | Valid |
+| P8  | 0.5560 | Valid |
+| P9  | 0.7078 | Valid |
+| P10 | 0.5835 | Valid |
 ### Hasil  Uji Reliabilitas
 | Cronbach's Alpha | Keterangan |
 |-----------------:|:----------:|
-| 0.868 | Reliabel |
+| 0.839 | Reliabel |
 
 
 ###
