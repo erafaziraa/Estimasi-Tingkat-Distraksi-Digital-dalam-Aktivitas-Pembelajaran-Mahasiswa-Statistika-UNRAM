@@ -32,6 +32,8 @@
   - [Tahap Analisis Data](#tahap-analisis-data)
 - [Hasil dan Pembahasan](#hasil-dan-pembahasan)
   - [Uji Validitas dan Reliabilitas Instrumen Penelitian](#2-uji-validitas-dan-reliabilitas-instrumen-penelitian)
+  - [Menghitung Skor Total](#3-menghitung-skor-total)
+  - [Cleaning Data](#4-cleaning-data)
   - [Penerapan Two-Stage Cluster Sampling](#hasil-penerapan-two-stage-cluster-sampling)
   - [Estimasi Rata-rata](#estimasi-rata-rata)
   - [Evaluasi Estimasi](#hasil-evaluasi-estimasi)
