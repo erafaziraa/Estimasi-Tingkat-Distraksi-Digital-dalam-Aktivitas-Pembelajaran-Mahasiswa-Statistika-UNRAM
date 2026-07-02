@@ -31,9 +31,10 @@
   - [Teknik Pengambilan Sampel](#teknik-pengambilan-sampel)
   - [Tahap Analisis Data](#tahap-analisis-data)
 - [Hasil dan Pembahasan](#hasil-dan-pembahasan)
-  - [Uji Validitas dan Reliabilitas Instrumen Penelitian](#2-uji-validitas-dan-reliabilitas-instrumen-penelitian)
-  - [Menghitung Skor Total](#3-menghitung-skor-total)
-  - [Cleaning Data](#4-cleaning-data)
+  - [Hasil Uji Validitas](#hasil-uji-validitas)
+  - [Hasil Uji Reliabilitas](#hasil-uji-reliabilitas)
+  - [Hasil Perhitungan dan Distribusi Skor Total](#hasil-perhitungan-dan-distribusi-skor-total)
+  - [Hasil Cleaning Data](#hasil-cleaning-data)
   - [Penerapan Two-Stage Cluster Sampling](#hasil-penerapan-two-stage-cluster-sampling)
   - [Estimasi Rata-rata](#estimasi-rata-rata)
   - [Evaluasi Estimasi](#hasil-evaluasi-estimasi)
@@ -355,7 +356,7 @@ Berdasarkan hasil pengujian, diperoleh hasil uji validitas sebagai berikut.
 | P10 | 0.5835 | Valid |
 
 Berdasarkan hasil uji validitas tersebut, seluruh item pernyataan (P1–P10) memiliki nilai r_hitung lebih dari 0.3, sehingga seluruh item dinyatakan valid. Nilai 0.3 merupakan nilai batas teoritis (rule of thumb) yang umum digunakan dalam penelitian untuk menunjukkan bahwa suatu item memiliki korelasi yang cukup dengan skor total, sehingga dianggap layak dalam mengukur variabel yang diteliti. Dengan demikian, seluruh butir pernyataan dapat digunakan untuk analisis selanjutnya.
-### Hasil  Uji Reliabilitas
+### Hasil Uji Reliabilitas
 
 Uji reliabilitas dilakukan untuk mengetahui tingkat konsistensi internal dari instrumen penelitian dalam mengukur variabel yang sama. Berdasarkan hasil pengujian, diperoleh nilai Cronbach’s Alpha sebagai berikut.
 | Cronbach's Alpha | Keterangan |
