@@ -132,7 +132,6 @@ hist(
   border = "black"
 )
 ```
-
 #### Statistika Deskriptif Skor Total
 
 Statistika deskriptif skor total digunakan untuk menggambarkan secara umum karakteristik data tingkat distraksi digital mahasiswa berdasarkan nilai rata-rata, minimum, maksimum, dan sebaran skor total.
@@ -143,7 +142,6 @@ sd(data$Skor_Total)
 min(data$Skor_Total)
 max(data$Skor_Total)
 ```
-
 ### 4. Cleaning Data
 
 Cleaning data dilakukan untuk memeriksa keberadaan missing value, data duplikat, dan outlier sebelum dilakukan analisis lebih lanjut.
@@ -170,6 +168,7 @@ boxplot(
 )
 boxplot.stats(data$Skor_Total)$out
 ```
+
 ### 5. Penerapan Two-Stage Cluster Sampling
 
 Penerapan Two-Stage Cluster Sampling dilakukan untuk membentuk desain survei sesuai dengan proses pengambilan sampel dua tahap.
@@ -348,3 +347,104 @@ Head Skor Total (6 Data Pertama)
 
 Visualisasi distribusi skor total
 ![Histogram Skor Total Distraksi Digital](C:/Users/ACER/OneDrive/Pictures/Screenshots/Screenshot 2026-07-02 190927.png)
+PENJELASANN
+
+### Hasil Cleaning Data
+
+### Hasil Penerapan Two-Stage Cluster Sampling
+Hasil Pembentukan Primary Sampling Unit (PSU)
+|  Item  | Jumlah Responden | Keterangan |
+| :----: | ---------------: | :--------: |
+| 2023 A |               11 |  Terpilih  |
+| 2024 A |               19 |  Terpilih  |
+
+Hasil Pembentukan Secondary Sampling Unit (SSU)
+| Cluster |  SSU |    Keterangan    |
+| :-----: | :--: | :--------------: |
+|  2023 A | 1–11 | Urutan responden |
+|  2024 A | 1–19 | Urutan responden |
+
+Probabilitas Tahap 1
+|  M  |  m  |    P1 |
+| :-: | :-: | ----: |
+|  6  |  2  | 0.333 |
+
+Probabilitas Tahap 2
+| Cluster |  N |  n |    P2 |
+| :-----: | -: | -: | ----: |
+|  2023 A | 18 | 11 | 0.611 |
+|  2024 A | 26 | 19 | 0.731 |
+
+Hasil Pembobotan
+| Cluster |  Bobot |
+| :-----: | -----: |
+|  2023 A | 4.1053 |
+|  2024 A | 4.9091 |
+
+Hasil Pembentukan Desain Survei
+|   Item   |            Hasil           |
+| :------: | :------------------------: |
+|  Desain  | Two-stage cluster sampling |
+| Struktur |  (2 cluster, 30 responden) |
+
+### Estimasi Rata-rata
+
+|         Item        |  Nilai |
+| :-----------------: | -----: |
+|   Mean (rata-rata)  | 37.582 |
+| Standard Error (SE) | 0.9369 |
+
+### Hasil Evaluasi Estimasi
+
+Nilai Standard Error
+|         Item        |   Nilai |
+| :-----------------: | ------: |
+| Standard Error (SE) |  0.9369 |
+
+Nilai Interval Kepercayaan 95%
+|         Item        |   Nilai |
+| :-----------------: | ------: |
+|  Lower Bound (2.5%) | 35.7460 |
+| Upper Bound (97.5%) | 39.4184 |
+
+Nilai Design Effect (DEFF)
+| Item |  Nilai |
+| :--: | -----: |
+| DEFF | 1.5562 |
+
+Nilai Relative Standard Error (RSE)
+| Item |   Nilai |
+| :--: | ------: |
+|  RSE | 2.4929% |
+
+### Interpretasi Tingkat Distraksi Digital
+
+Hasil Estimasi Rata-rata Skor Total
+|           Item          |  Nilai |
+| :---------------------: | -----: |
+|    Mean (Skala 10–50)   | 37.582 |
+| Mean (Skala Likert 1–5) |  3.758 |
+
+Skala Pengukuran dan Interval Kategori
+|          Item          | Nilai |
+| :--------------------: | ----: |
+|  Skor Minimum (Likert) |     1 |
+| Skor Maksimum (Likert) |     5 |
+|     Jumlah Kategori    |     5 |
+|    Panjang Interval    |   0.8 |
+
+Batas Kategori Interpretasi
+|    Kategori   | Batas Bawah | Batas Atas |
+| :-----------: | ----------: | ---------: |
+| Sangat Rendah |         1.0 |        1.8 |
+|     Rendah    |         1.8 |        2.6 |
+|     Sedang    |         2.6 |        3.4 |
+|     Tinggi    |         3.4 |        4.2 |
+| Sangat Tinggi |         4.2 |        5.0 |
+
+Kategori Tingkat Distraksi Digital
+|     Item    |  Nilai |
+| :---------: | -----: |
+| Mean Likert |  3.758 |
+|   Kategori  | Tinggi |
+
