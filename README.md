@@ -133,16 +133,6 @@ hist(
   border = "black"
 )
 ```
-#### Statistika Deskriptif Skor Total
-
-Statistika deskriptif skor total digunakan untuk menggambarkan secara umum karakteristik data tingkat distraksi digital mahasiswa berdasarkan nilai rata-rata, minimum, maksimum, dan sebaran skor total.
-```
-summary(data$Skor_Total)
-mean(data$Skor_Total)
-sd(data$Skor_Total)
-min(data$Skor_Total)
-max(data$Skor_Total)
-```
 ### 4. Cleaning Data
 
 Cleaning data dilakukan untuk memeriksa keberadaan missing value, data duplikat, dan outlier sebelum dilakukan analisis lebih lanjut.
@@ -371,83 +361,173 @@ Berdasarkan hasil pemeriksaan missing value, seluruh variabel memiliki nilai 0 y
 Berdasarkan hasil pemeriksaan data duplikat menggunakan fungsi duplicated(), diperoleh jumlah data duplikat sebanyak 0. Hal ini menunjukkan bahwa tidak terdapat baris data yang memiliki isi yang sama secara keseluruhan pada dataset. Dengan demikian, seluruh data merupakan data yang unik dan dapat digunakan dalam proses analisis tanpa perlu dilakukan penghapusan data duplikat.
 
 #### Outlier
+![Boxplot Skor Total Distraksi Digital](Boxplot%20Outlier.png)
 
-
+Berdasarkan boxplot skor total distraksi digital, terdapat satu nilai pencilan (outlier) pada skor sekitar 25, yang menunjukkan adanya satu responden dengan skor lebih rendah dibandingkan mayoritas responden. Sebagian besar skor berada pada rentang 35–41 dengan median sekitar 38, sehingga distribusi skor cenderung terpusat pada nilai tengah. Keberadaan outlier tersebut tidak menunjukkan adanya kesalahan data, sehingga tetap dipertahankan dalam proses analisis.
 ### Hasil Penerapan Two-Stage Cluster Sampling
-Hasil Pembentukan Primary Sampling Unit (PSU)
+
+Pada tahap ini dilakukan penerapan metode Two-Stage Cluster Sampling yang meliputi pembentukan Primary Sampling Unit (PSU), Secondary Sampling Unit (SSU), perhitungan probabilitas pemilihan pada setiap tahap, penentuan bobot sampel, serta pembentukan desain survei. Hasil dari setiap tahapan disajikan sebagai berikut.
+
+#### Hasil Pembentukan Primary Sampling Unit (PSU)
+Tahap pertama dalam metode Two-Stage Cluster Sampling adalah pembentukan Primary Sampling Unit (PSU), yaitu penentuan klaster yang akan dijadikan sampel penelitian. Hasil pembentukan PSU disajikan pada tabel berikut.
 |  Item  | Jumlah Responden | Keterangan |
 | :----: | ---------------: | :--------: |
 | 2023 A |               11 |  Terpilih  |
 | 2024 A |               19 |  Terpilih  |
 
-Hasil Pembentukan Secondary Sampling Unit (SSU)
+Berdasarkan Tabel di atas, terpilih 2 klaster, yaitu kelas 2023 A yang terdiri atas 11 responden dan kelas 2024 A yang terdiri atas 19 responden, sebagai Primary Sampling Unit (PSU) dalam penelitian ini.
+
+#### Hasil Pembentukan Secondary Sampling Unit (SSU)
+Setelah Primary Sampling Unit (PSU) ditentukan, tahap selanjutnya adalah pembentukan Secondary Sampling Unit (SSU), yaitu penentuan unit sampel pada masing-masing klaster terpilih. Hasil pembentukan SSU disajikan pada tabel berikut.
 | Cluster |  SSU |    Keterangan    |
 | :-----: | :--: | :--------------: |
 |  2023 A | 1–11 | Urutan responden |
 |  2024 A | 1–19 | Urutan responden |
 
-Probabilitas Tahap 1
+Berdasarkan Tabel di atas, Secondary Sampling Unit (SSU) dibentuk berdasarkan urutan responden pada setiap klaster, yaitu 1–11 untuk kelas 2023 A dan 1–19 untuk kelas 2024 A.
+
+#### Probabilitas Tahap 1
+Setelah pembentukan PSUdan SSU, dilakukan perhitungan probabilitas pemilihan pada tahap pertama untuk memperoleh peluang terpilihnya klaster dalam proses pengambilan sampel. Probabilitas tahap pertama dihitung menggunakan rumus:
+
+$$
+P_1=\frac{m}{M}
+$$
+
+dengan:
+- \(P_1\) = probabilitas pemilihan tahap pertama,
+- \(m\) = jumlah klaster yang dipilih sebagai sampel,
+- \(M\) = jumlah seluruh klaster pada populasi.
+
+Hasil perhitungan probabilitas tahap pertama disajikan pada tabel berikut.
 |  M  |  m  |    P1 |
 | :-: | :-: | ----: |
 |  6  |  2  | 0.333 |
 
-Probabilitas Tahap 2
+Berdasarkan Tabel di atas, diketahui jumlah keseluruhan klaster (M) sebanyak 6 klaster, dengan jumlah klaster yang dipilih (m) sebanyak 2 klaster. Berdasarkan kondisi tersebut diperoleh probabilitas pemilihan pada tahap pertama (P₁) sebesar 0,333, yang merupakan peluang terpilihnya suatu klaster pada tahap awal proses pengambilan sampel.
+
+#### Probabilitas Tahap 2
+Selanjutnya dilakukan perhitungan probabilitas pemilihan pada tahap kedua, yaitu peluang terpilihnya responden dalam setiap klaster yang telah dipilih pada tahap pertama. Probabilitas tahap kedua dihitung menggunakan rumus:
+
+$$
+P_2=\frac{n}{N}
+$$
+
+dengan:
+- \(P_2\) = probabilitas pemilihan tahap kedua,
+- \(n\) = jumlah responden yang dipilih pada setiap klaster,
+- \(N\) = jumlah responden pada setiap klaster dalam populasi.
+
+Hasil perhitungan probabilitas tahap kedua disajikan pada tabel berikut.
 | Cluster |  N |  n |    P2 |
 | :-----: | -: | -: | ----: |
 |  2023 A | 18 | 11 | 0.611 |
 |  2024 A | 26 | 19 | 0.731 |
 
-Hasil Pembobotan
+Berdasarkan Tabel di atas, probabilitas pemilihan tahap kedua dihitung untuk setiap klaster yang telah terpilih. Pada klaster 2023 A, jumlah populasi dalam klaster (N) sebanyak 18 responden dengan sampel yang dipilih (n) sebanyak 11 responden, sehingga diperoleh nilai P₂ sebesar 0,611. Sementara itu, pada klaster 2024 A, jumlah populasi dalam klaster sebanyak 26 responden dengan sampel yang dipilih sebanyak 19 responden, sehingga diperoleh nilai P₂ sebesar 0,731.
+
+#### Hasil Pembobotan
+Berdasarkan probabilitas pemilihan pada tahap pertama dan tahap kedua, selanjutnya dilakukan perhitungan bobot sampel yang digunakan dalam proses estimasi. Bobot sampel dihitung menggunakan rumus:
+
+$$
+w=\frac{1}{P_1\times P_2}
+$$
+
+atau dapat dinyatakan sebagai:
+
+$$
+w=\frac{M}{m}\times\frac{N}{n}
+$$
+
+dengan:
+- \(w\) = bobot sampel (*sampling weight*),
+- \(P_1\) = probabilitas pemilihan tahap pertama,
+- \(P_2\) = probabilitas pemilihan tahap kedua,
+- \(M\) = jumlah seluruh klaster pada populasi,
+- \(m\) = jumlah klaster yang dipilih sebagai sampel,
+- \(N\) = jumlah responden pada klaster dalam populasi,
+- \(n\) = jumlah responden yang dipilih pada setiap klaster.
+
+Hasil pembobotan disajikan pada tabel berikut.
 | Cluster |  Bobot |
 | :-----: | -----: |
 |  2023 A | 4.1053 |
 |  2024 A | 4.9091 |
 
-Hasil Pembentukan Desain Survei
+Berdasarkan Tabel di atas, diperoleh bobot sampel yang berbeda untuk setiap klaster berdasarkan probabilitas pemilihannya. Klaster 2023 A memiliki bobot sebesar 4,1053, sedangkan klaster 2024 A memiliki bobot sebesar 4,9091. Bobot tersebut selanjutnya digunakan dalam pembentukan desain survei dan proses estimasi parameter.
+
+#### Hasil Pembentukan Desain Survei
+Tahap terakhir adalah pembentukan desain survei berdasarkan hasil pembobotan dan struktur pengambilan sampel yang telah diperoleh. Desain survei tersebut digunakan sebagai dasar dalam proses estimasi parameter. Hasil pembentukan desain survei disajikan pada tabel berikut.
 |   Item   |            Hasil           |
 | :------: | :------------------------: |
 |  Desain  | Two-stage cluster sampling |
 | Struktur |  (2 cluster, 30 responden) |
 
+Berdasarkan Tabel di atas, terbentuk desain survei menggunakan metode Two-Stage Cluster Sampling yang terdiri atas 2 klaster, yaitu 2023 A dan 2024 A, dengan total 30 responden sebagai sampel penelitian. Desain survei ini kemudian digunakan sebagai dasar dalam proses estimasi parameter menggunakan pendekatan survei.
+
 ### Estimasi Rata-rata
+
+Estimasi rata-rata dilakukan untuk memperoleh nilai rata-rata skor total distraksi digital berdasarkan data hasil pengambilan sampel. Hasil estimasi disajikan dalam bentuk nilai rata-rata (mean) yang menggambarkan kecenderungan umum skor total responden. Hasil estimasi rata-rata disajikan pada tabel berikut.
 
 |         Item        |  Nilai |
 | :-----------------: | -----: |
 |   Mean (rata-rata)  | 37.582 |
 | Standard Error (SE) | 0.9369 |
 
-### Hasil Evaluasi Estimasi
+Berdasarkan tabel di atas, diperoleh nilai estimasi rata-rata (mean) skor total distraksi digital sebesar 37,582. Nilai tersebut diperoleh dari proses estimasi terhadap data sampel yang telah dikumpulkan dan mencerminkan rata-rata skor total seluruh responden dalam penelitian. Nilai rata-rata ini selanjutnya digunakan sebagai dasar dalam menentukan tingkat distraksi digital mahasiswa pada tahap analisis berikutnya.
 
-Nilai Standard Error
+### Hasil Evaluasi Estimasi
+Evaluasi estimasi dilakukan untuk menilai kualitas hasil estimasi rata-rata yang diperoleh dari data sampel. Evaluasi ini meliputi perhitungan Standard Error (SE), interval kepercayaan 95%, Design Effect (DEFF), dan Relative Standard Error (RSE). Hasil dari masing-masing ukuran evaluasi disajikan sebagai berikut.
+
+#### Nilai Standard Error
+Standard Error (SE) dihitung untuk mengetahui besarnya kesalahan baku dari nilai estimasi rata-rata yang diperoleh. Hasil perhitungan Standard Error disajikan pada tabel berikut.
 |         Item        |   Nilai |
 | :-----------------: | ------: |
 | Standard Error (SE) |  0.9369 |
 
-Nilai Interval Kepercayaan 95%
+Berdasarkan tabel di atas, diperoleh nilai Standard Error (SE) sebesar 0,9369. Nilai ini menunjukkan besarnya kesalahan baku dari estimasi rata-rata yang diperoleh berdasarkan data sampel dan digunakan sebagai ukuran ketelitian hasil estimasi.
+
+#### Nilai Interval Kepercayaan 95%
+Interval kepercayaan 95% dihitung untuk memperoleh rentang nilai yang diperkirakan memuat nilai rata-rata populasi berdasarkan hasil estimasi. Hasil perhitungan interval kepercayaan 95% disajikan pada tabel berikut.
+
 |         Item        |   Nilai |
 | :-----------------: | ------: |
 |  Lower Bound (2.5%) | 35.7460 |
 | Upper Bound (97.5%) | 39.4184 |
 
-Nilai Design Effect (DEFF)
+Berdasarkan tabel di atas, diperoleh batas bawah (Lower Bound) sebesar 35,7460 dan batas atas (Upper Bound) sebesar 39,4184. Dengan demikian, interval kepercayaan 95% terhadap estimasi rata-rata skor total distraksi digital berada pada rentang 35,7460 hingga 39,4184.
+
+#### Nilai Design Effect (DEFF)
+Design Effect (DEFF) dihitung untuk membandingkan efisiensi desain pengambilan sampel yang digunakan terhadap Simple Random Sampling (SRS). Hasil perhitungan Design Effect disajikan pada tabel berikut.
 | Item |  Nilai |
 | :--: | -----: |
 | DEFF | 1.5562 |
 
-Nilai Relative Standard Error (RSE)
+Berdasarkan tabel di atas, diperoleh nilai Design Effect (DEFF) sebesar 1,5562. Nilai ini menunjukkan bahwa penggunaan desain Two-Stage Cluster Sampling menyebabkan varians estimasi menjadi sekitar 1,56 kali lebih besar dibandingkan apabila menggunakan metode Simple Random Sampling (SRS).
+
+#### Nilai Relative Standard Error (RSE)
+Relative Standard Error (RSE) dihitung untuk mengetahui besarnya kesalahan baku relatif terhadap nilai estimasi rata-rata. Hasil perhitungan Relative Standard Error disajikan pada tabel berikut.
 | Item |   Nilai |
 | :--: | ------: |
 |  RSE | 2.4929% |
 
-### Interpretasi Tingkat Distraksi Digital
+Berdasarkan tabel di atas, diperoleh nilai Relative Standard Error (RSE) sebesar 2,4929%. Nilai tersebut menunjukkan bahwa besarnya kesalahan baku relatif terhadap nilai estimasi rata-rata adalah 2,4929%. Semakin kecil nilai RSE, semakin tinggi tingkat ketelitian hasil estimasi. Dengan nilai RSE sebesar 2,4929%, hasil estimasi memiliki tingkat ketelitian yang baik karena kesalahan relatif terhadap nilai estimasi tergolong kecil.
 
-Hasil Estimasi Rata-rata Skor Total
+Berdasarkan hasil evaluasi estimasi secara keseluruhan, nilai Standard Error (SE), interval kepercayaan 95%, Design Effect (DEFF), dan Relative Standard Error (RSE) menunjukkan bahwa hasil estimasi yang diperoleh memiliki tingkat ketelitian yang memadai, sehingga layak digunakan sebagai dasar dalam penarikan kesimpulan penelitian.
+
+### Interpretasi Tingkat Distraksi Digital
+Interpretasi tingkat distraksi digital dilakukan berdasarkan hasil estimasi rata-rata skor total yang telah diperoleh. Nilai rata-rata tersebut kemudian dikonversi ke dalam skala Likert 1–5 dan dibandingkan dengan interval kategori yang telah ditentukan untuk mengetahui tingkat distraksi digital mahasiswa. Hasil interpretasi disajikan sebagai berikut.
+
+#### Hasil Estimasi Rata-rata Skor Total
+Hasil estimasi rata-rata skor total dikonversi dari skala total (10–50) ke skala Likert (1–5) agar memudahkan proses interpretasi terhadap tingkat distraksi digital. Hasil konversi disajikan pada tabel berikut.
 |           Item          |  Nilai |
 | :---------------------: | -----: |
 |    Mean (Skala 10–50)   | 37.582 |
 | Mean (Skala Likert 1–5) |  3.758 |
 
-Skala Pengukuran dan Interval Kategori
+Berdasarkan tabel di atas, diperoleh nilai estimasi rata-rata skor total sebesar 37,582 pada skala 10–50. Setelah dikonversi ke dalam skala Likert 1–5, diperoleh nilai rata-rata sebesar 3,758, yang selanjutnya digunakan sebagai dasar dalam menentukan kategori tingkat distraksi digital.
+
+#### Skala Pengukuran dan Interval Kategori
+Untuk menentukan kategori tingkat distraksi digital, dilakukan pembentukan interval kategori berdasarkan rentang skala Likert yang digunakan dalam penelitian. Hasil perhitungan interval kategori disajikan pada tabel berikut.
 |          Item          | Nilai |
 | :--------------------: | ----: |
 |  Skor Minimum (Likert) |     1 |
@@ -455,7 +535,10 @@ Skala Pengukuran dan Interval Kategori
 |     Jumlah Kategori    |     5 |
 |    Panjang Interval    |   0.8 |
 
-Batas Kategori Interpretasi
+Berdasarkan tabel di atas, skala Likert yang digunakan memiliki rentang nilai 1 sampai 5 dengan 5 kategori penilaian. Berdasarkan rentang tersebut diperoleh panjang interval sebesar 0,8 yang digunakan sebagai dasar dalam penyusunan batas kategori tingkat distraksi digital.
+
+#### Batas Kategori Interpretasi
+Berdasarkan panjang interval yang telah diperoleh, selanjutnya ditentukan batas kategori interpretasi untuk mengelompokkan tingkat distraksi digital ke dalam lima kategori. Hasil pembentukan batas kategori disajikan pada tabel berikut.
 |    Kategori   | Batas Bawah | Batas Atas |
 | :-----------: | ----------: | ---------: |
 | Sangat Rendah |         1.0 |        1.8 |
@@ -464,9 +547,32 @@ Batas Kategori Interpretasi
 |     Tinggi    |         3.4 |        4.2 |
 | Sangat Tinggi |         4.2 |        5.0 |
 
-Kategori Tingkat Distraksi Digital
+Berdasarkan tabel di atas, tingkat distraksi digital dikelompokkan ke dalam lima kategori, yaitu sangat rendah, rendah, sedang, tinggi, dan sangat tinggi. Batas interval setiap kategori digunakan sebagai acuan untuk menentukan kategori berdasarkan nilai rata-rata hasil estimasi.
+
+#### Kategori Tingkat Distraksi Digital
+Tahap terakhir adalah menentukan kategori tingkat distraksi digital berdasarkan nilai rata-rata pada skala Likert yang telah diperoleh. Hasil penentuan kategori disajikan pada tabel berikut.
 |     Item    |  Nilai |
 | :---------: | -----: |
 | Mean Likert |  3.758 |
 |   Kategori  | Tinggi |
 
+Berdasarkan tabel di atas, nilai rata-rata pada skala Likert sebesar 3,758 berada pada interval 3,4–4,2, sehingga tingkat distraksi digital mahasiswa termasuk dalam kategori tinggi. Hasil ini menunjukkan bahwa rata-rata tingkat distraksi digital responden berada pada kategori tinggi berdasarkan interval interpretasi yang telah ditetapkan.
+
+## Kesimpulan
+Berdasarkan hasil penelitian yang telah dilakukan, dapat disimpulkan sebagai berikut.
+
+1. Instrumen penelitian yang digunakan untuk mengukur tingkat distraksi digital mahasiswa Program Studi Statistika Universitas Mataram telah memenuhi kriteria valid dan reliabel, sehingga layak digunakan dalam proses pengumpulan dan analisis data.
+2. Penerapan metode Two-Stage Cluster Sampling berhasil membentuk desain survei dengan 2 klaster terpilih, yaitu kelas 2023 A dan 2024 A, serta menghasilkan bobot sampel yang digunakan dalam proses estimasi rata-rata populasi.
+3. Hasil estimasi menunjukkan bahwa rata-rata skor total distraksi digital mahasiswa sebesar 37,582, dengan nilai Standard Error (SE) sebesar 0,9369, Design Effect (DEFF) sebesar 1,5562, dan Relative Standard Error (RSE) sebesar 2,4929%. Hasil evaluasi tersebut menunjukkan bahwa estimasi memiliki tingkat ketelitian yang baik dan layak digunakan sebagai dasar dalam penarikan kesimpulan penelitian.
+4. Berdasarkan hasil interpretasi terhadap skala Likert, diperoleh nilai rata-rata sebesar 3,758 yang berada pada interval 3,4–4,2 sehingga dapat disimpulkan bahwa tingkat distraksi digital dalam aktivitas pembelajaran mahasiswa Program Studi Statistika Universitas Mataram termasuk dalam kategori tinggi. Dengan demikian, tujuan penelitian untuk mengestimasi tingkat distraksi digital mahasiswa menggunakan metode Two-Stage Cluster Sampling telah tercapai.
+
+## Rekomendasi
+Berdasarkan hasil penelitian yang telah dilakukan, beberapa rekomendasi yang dapat diberikan adalah sebagai berikut.
+
+1. Mahasiswa diharapkan dapat mengelola penggunaan perangkat digital secara lebih bijaksana selama kegiatan pembelajaran dengan memprioritaskan penggunaan teknologi untuk keperluan akademik serta mengurangi aktivitas digital yang tidak berkaitan dengan proses belajar.
+2. Mahasiswa disarankan menerapkan strategi untuk meminimalkan distraksi digital, seperti mengaktifkan mode fokus (focus mode), membatasi notifikasi dari aplikasi yang tidak berkaitan dengan pembelajaran, dan mengatur waktu penggunaan media sosial agar konsentrasi belajar tetap terjaga.
+3. Penelitian selanjutnya disarankan menggunakan jumlah sampel yang lebih besar atau melibatkan lebih banyak klaster agar hasil estimasi lebih representatif. Selain itu, penelitian selanjutnya dapat menambahkan variabel lain yang diduga memengaruhi tingkat distraksi digital, seperti intensitas penggunaan media sosial, motivasi belajar, manajemen waktu, maupun faktor lingkungan belajar.
+
+## Link Kuisioner
+
+https://forms.gle/u9bojCbF4XxwhpLh9
