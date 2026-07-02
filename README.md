@@ -1,4 +1,43 @@
 # Estimasi Tingkat Distraksi Digital dalam Aktivitas Pembelajaran Mahasiswa Program Studi Statistika Universitas Mataram Menggunakan Two-Stage Cluster Sampling
+
+## 📂 Struktur Repository
+
+```text
+📦 Estimasi-Tingkat-Distraksi-Digital-dengan-Two-Stage-Cluster-Sampling
+│
+├── 📄 README.md
+│   └── Dokumentasi lengkap penelitian
+│
+├── 📄 Executive Summary.pdf
+│   └── Ringkasan hasil penelitian
+│
+├── 📊 Data Kuesioner.xlsx
+│   └── Data hasil kuesioner penelitian
+│
+├── 💻 Sintaks R.R
+│   └── Script analisis Two-Stage Cluster Sampling menggunakan R
+│
+├── 📈 Histogram Skor Total.png
+│   └── Visualisasi distribusi skor total
+│
+└── 📈 Boxplot Outlier.png
+    └── Visualisasi deteksi outlier
+```
+## 📑 Daftar Isi
+
+- [Latar Belakang](#latar-belakang)
+- [Tujuan Penelitian](#tujuan-penelitian)
+- [Metode Penelitian](#metode-penelitian)
+  - [Teknik Pengambilan Sampel](#teknik-pengambilan-sampel)
+  - [Tahap Analisis Data](#tahap-analisis-data)
+- [Hasil dan Pembahasan](#hasil-dan-pembahasan)
+  - [Uji Validitas dan Reliabilitas Instrumen Penelitian](#2-uji-validitas-dan-reliabilitas-instrumen-penelitian)
+  - [Penerapan Two-Stage Cluster Sampling](#hasil-penerapan-two-stage-cluster-sampling)
+  - [Estimasi Rata-rata](#estimasi-rata-rata)
+  - [Evaluasi Estimasi](#hasil-evaluasi-estimasi)
+  - [Interpretasi Tingkat Distraksi Digital](#interpretasi-tingkat-distraksi-digital)
+- [Kesimpulan](#kesimpulan)
+- [Rekomendasi](#rekomendasi)
 ## Latar Belakang
 
 Perkembangan teknologi digital telah memberikan kemudahan bagi mahasiswa dalam mengakses informasi dan mendukung proses pembelajaran. Namun, penggunaan perangkat digital yang tidak terkontrol juga dapat menimbulkan distraksi digital, yaitu gangguan perhatian akibat aktivitas seperti penggunaan media sosial, aplikasi pesan instan, maupun hiburan digital selama kegiatan belajar. Distraksi digital berpotensi menurunkan konsentrasi, efektivitas belajar, serta hasil akademik mahasiswa.
@@ -7,7 +46,7 @@ Mahasiswa Program Studi Statistika Universitas Mataram sebagai pengguna aktif te
 
 Penelitian ini bertujuan untuk mengestimasi tingkat distraksi digital dalam aktivitas pembelajaran mahasiswa Program Studi Statistika Universitas Mataram menggunakan metode *Two-Stage Cluster Sampling*. Metode tersebut dipilih karena populasi mahasiswa secara alami terbagi dalam kelompok-kelompok, seperti angkatan atau kelas, sehingga proses pengambilan sampel menjadi lebih efisien tanpa mengurangi kualitas estimasi yang dihasilkan.
 
-## Tujuan
+## Tujuan Penelitian
 
 Tujuan penelitian ini adalah sebagai berikut:
 
@@ -67,7 +106,7 @@ data <- read_excel("C:/Users/ACER/Downloads/Estimasi Tingkat Distraksi Digital d
 View(data)
 ```
 
-### 2. Uji Validitas & Reliabilitas Instrumen Penelitian
+### 2. Uji Validitas dan Reliabilitas Instrumen Penelitian
 #### Uji Validitas Instrumen Penelitian
 
 Uji validitas dilakukan untuk mengetahui apakah setiap butir pernyataan mampu mengukur variabel yang diteliti.
